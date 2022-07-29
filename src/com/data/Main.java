@@ -328,25 +328,19 @@ class LinkedList {
 public class Main {
     public static void main(String[] args) {
 	// write your code here
-        LinkedList l1 = new LinkedList(7);
-        LinkedList.add(l1, 1);
-        LinkedList.add(l1, 6);
+        SortedStack sortedStack = new SortedStack();
+        sortedStack.push(6);
+        sortedStack.push(8);
+        sortedStack.push(1);
+        sortedStack.push(9);
+        sortedStack.push(4);
+        sortedStack.push(5);
+        sortedStack.push(3);
 
-        Node n = new Node(4);
-        l1.head.next.next.next = n;
-        LinkedList.add(l1, 2);
-        LinkedList.add(l1, 3);
-        LinkedList.add(l1, 5);
-        LinkedList.add(l1, 6);
-        Node h = l1.head;
-        while(h.next!=null)
-            h = h.next;
-        h.next = l1.head.next.next.next;
+        sortedStack.sort();
+        while(!sortedStack.isEmpty()) {
+            System.out.println(sortedStack.pop());
+        }
 
-        Node as = LinkedList.loopBeginning(l1);
-        if(as != null)
-            System.out.println(as.data);
-        else
-            System.out.println("No loop");
     }
 }
