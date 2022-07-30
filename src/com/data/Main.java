@@ -1,5 +1,8 @@
 package com.data;
 
+import com.data.tree.BinaryTree;
+import com.data.tree.MinHeap;
+
 class Node {
     int data;
     Node next;
@@ -326,21 +329,15 @@ class LinkedList {
 }
 
 public class Main {
+    static void print(MinHeap tree) {
+        MinHeap.print(tree);
+        System.out.println("");
+    }
     public static void main(String[] args) {
 	// write your code here
-        SortedStack sortedStack = new SortedStack();
-        sortedStack.push(6);
-        sortedStack.push(8);
-        sortedStack.push(1);
-        sortedStack.push(9);
-        sortedStack.push(4);
-        sortedStack.push(5);
-        sortedStack.push(3);
-
-        sortedStack.sort();
-        while(!sortedStack.isEmpty()) {
-            System.out.println(sortedStack.pop());
-        }
-
+        int a[] = {6, 8, 2, 4, 5, 9, 1};
+        a = MinHeap.heapSort(a);
+//        for(int i=0; i<a.length; i++)
+//            System.out.print(a[i] + " ");
     }
 }

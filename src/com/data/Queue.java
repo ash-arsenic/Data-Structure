@@ -14,17 +14,17 @@ public class Queue<T> {
     QueueNode<T> first;
     QueueNode<T> last;
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return first == null;
     }
 
-    T peek() {
+    public T peek() {
         if(first != null)
             return null;
         return first.data;
     }
 
-    void add(T data) {
+    public void add(T data) {
         QueueNode<T> qn = new QueueNode<>(data);
         if (last == null) {
             last = qn;
@@ -35,7 +35,7 @@ public class Queue<T> {
         }
     }
 
-    T remove() {
+    public T remove() {
         if(first == null)
             return null;
 
